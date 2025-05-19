@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/KimetsuAndrea/TelegramApi#readme",
   "dependencies": {
-    "axios": "^1.9.0",
-    "express": "^5.1.0"
+    "axios": "^1.9.0"
   }
 }
