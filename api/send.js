@@ -1,14 +1,15 @@
-import express from 'express';
+// api/send.js
 import axios from 'axios';
 
-const app = express();
-app.use(express.json());
-
-const TELEGRAM_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN';
+const TELEGRAM_TOKEN = '7935094184:AAEtCkwxmdKbOvKZuWmkBFRdxF702BaX0xo';
 const CHAT_IDS = ['6260002708', '7409394162'];
 
-app.post('/send', async (req, res) => {
-  const message = req.body.message;
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false, error: 'Method Not Allowed' });
+  }
+
+  const { message } = req.body;
 
   if (!message) {
     return res.status(400).json({ success: false, error: 'Message is required' });
@@ -24,7 +25,7 @@ app.post('/send', async (req, res) => {
       )
     );
 
-    res.json({
+    res.status(200).json({
       success: true,
       results: sendResults.map((r, i) => ({
         chat_id: CHAT_IDS[i],
@@ -35,7 +36,4 @@ app.post('/send', async (req, res) => {
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
-});
-
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+}
