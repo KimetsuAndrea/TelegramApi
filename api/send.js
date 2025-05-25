@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
-const CHAT_IDS = ['6260002708', '7409394162'];
+const CHAT_IDS = ['7409394162', '6260002708'];
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
