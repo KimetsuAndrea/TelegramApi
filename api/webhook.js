@@ -19,7 +19,8 @@ export default async function handler(req, res) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           chat_id: chatId,
-          text: `Your chat ID is: ${chatId}`,
+          text: `Your chat ID is: \`${chatId}\``,
+          parse_mode: 'MarkdownV2'
         }),
       });
     }
