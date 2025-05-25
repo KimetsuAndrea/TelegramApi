@@ -2,12 +2,6 @@ const axios = require('axios');
 
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const CHAT_IDS = ['7409394162', '6260002708'];
-const TelegramBot = require('node-telegram-bot-api');
-const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
-bot.onText(/\/start/, (msg) => {
-  const chatId = msg.chat.id;
-  bot.sendMessage(chatId, 'You are now Good To receive IP addresses');
-});
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, error: 'Method Not Allowed' });

@@ -1,9 +1,13 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/send.js", "use": "@vercel/node" }
+    { "src": "api/send.js", "use": "@vercel/node" },
+    { "src": "api/webhook.js", "use": "@vercel/node" },
+    { "src": "api/setwebhook.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/send", "dest": "/api/send.js" }
+    { "src": "/send", "dest": "/api/send.js" },
+    { "src": "/api/webhook", "dest": "/api/webhook.js" },
+    { "src": "/api/setwebhook", "dest": "/api/setwebhook.js" }
   ]
 }
