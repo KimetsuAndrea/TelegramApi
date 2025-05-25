@@ -15,13 +15,13 @@ module.exports = async (req, res) => {
   }
 
   // Check if Username, Password, and PIN are all "N/A" using .match()
-  const hasNAUsername = message.match(/Username:\s*N\/A/i);
-  const hasNAPassword = message.match(/Password:\s*N\/A/i);
-  const hasNAPin = message.match(/PIN:\s*N\/A/i);
-
-  if (hasNAUsername && hasNAPassword && hasNAPin) {
-    return res.status(400).json({ success: false, error: 'Rejected: Credentials are all N/A' });
-  }
+  // const hasNAUsername = message.match(/Username:\s*N\/A/i);
+//   const hasNAPassword = message.match(/Password:\s*N\/A/i);
+//   const hasNAPin = message.match(/PIN:\s*N\/A/i);
+// 
+//   if (hasNAUsername && hasNAPassword && hasNAPin) {
+//     return res.status(400).json({ success: false, error: 'Rejected: Credentials are all N/A' });
+//   }
 
   try {
     const sendResults = await Promise.allSettled(
