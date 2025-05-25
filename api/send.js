@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
-const CHAT_IDS = ['7409394162', '6260002708'];
+const CHAT_IDS = ['-1002597682799'];
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, error: 'Method Not Allowed' });
